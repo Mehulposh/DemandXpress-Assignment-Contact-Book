@@ -1,6 +1,7 @@
 const express = require('express');
 require('dotenv').config();
 const cors = require('cors');
+const ContactRoutes = require('./Routes/ContactRoutes')
 
 
 const PORT = process.env.PORT;
@@ -15,7 +16,7 @@ server.use(cors());
 server.use(express.json());
 
 //api route for contact
-// server.use('/api/v1/contact')
+server.use('/api/v1/contacts',ContactRoutes)
 
 
 server.listen(PORT, () => {
