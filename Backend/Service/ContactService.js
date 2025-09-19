@@ -7,7 +7,9 @@ const getContacts = async (limit,skip) => {
             ContactModel.find({}).skip(skip).limit(limit),
             ContactModel.countDocuments()
         ])
-        return [contacts,total]
+        
+        
+        return {contacts,total}
     } catch (error) {
         return error
     }
@@ -25,8 +27,11 @@ const addContact = async(name,email,phone) => {
 }
 
 const deleteContact = async (id) => {
+    
+    
     try {
         const response = await ContactModel.findByIdAndDelete(id);
+        
         return response
     } catch (error) {
         return error
@@ -34,4 +39,4 @@ const deleteContact = async (id) => {
 }
 
 
-modulee.exports = {getContacts,addContact,deleteContact}
+module.exports = {getContacts,addContact,deleteContact}

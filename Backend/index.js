@@ -2,7 +2,7 @@ const express = require('express');
 require('dotenv').config();
 const cors = require('cors');
 const ContactRoutes = require('./Routes/ContactRoutes')
-
+const { default: mongoose } = require('mongoose');  
 
 const PORT = process.env.PORT;
 
@@ -18,6 +18,15 @@ server.use(express.json());
 //api route for contact
 server.use('/api/v1/contacts',ContactRoutes)
 
+
+const dbName = process.env.DB_NAME;
+const dbPort = process.env.DB_PORT;
+const dbHost = process.env.DB_HOST;
+// database connection 
+mongoose.connect(`${dbHost}:${dbPort}/${dbName}`)
+.then(() => {
+    console.log("thumbs up DB IS CONNECTED")
+})
 
 server.listen(PORT, () => {
     console.log("Thumbs up every thing is good port listning is active on expressJS",PORT)
