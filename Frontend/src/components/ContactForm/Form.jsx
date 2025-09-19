@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Button from '../Button/Button'
-import axios from 'axios'
-import backend from '../../../ApiEndpoint/endpoint'
+// import axios from 'axios'
+// import backend from '../../../ApiEndpoint/endpoint'
+import { addContact  } from '../../../ApiCall/ApiCall'
 
 const Form = () => {
   const [formData,setFormData] = useState({
@@ -14,7 +15,7 @@ const Form = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`${backend.endpoint}`,formData);
+      const response = await addContact(formData);
       console.log(response);
       
     } catch (error) {
@@ -23,6 +24,7 @@ const Form = () => {
     }
 
     setFormData({ name: "", email: "", phone: "" });
+   
   }
   return (
     <div>
@@ -47,13 +49,14 @@ const Form = () => {
         </label>
         <label>
           Phone No: 
-        </label>
-        <input 
-            type='number' 
+          <input 
+            type='tel' 
             placeholder='Write phone number'
             value={formData.phone}
             onChange={(e) => setFormData({...formData,phone: e.target.value})}
             />
+        </label>
+        
 
         <Button type='submit'>
           Add Contact
