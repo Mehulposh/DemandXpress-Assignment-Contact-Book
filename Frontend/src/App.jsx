@@ -1,5 +1,6 @@
 // import { useState } from 'react'
 import Button from './components/Button/Button'
+import Form from './components/ContactForm/Form'
 
 
 function App() {
@@ -7,11 +8,16 @@ function App() {
 
   return (
     <div>
-      <Button onClick={() => alert('Clicked!')}>
-        Add Contact
-      </Button>
+      <Form />
     </div>
   )
 }
 
 export default App
+
+
+/*
+<Button onClick={() => alert('Clicked!')}>
+        Add Contact
+      </Button>
+*/
