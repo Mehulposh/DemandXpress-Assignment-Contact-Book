@@ -14,8 +14,8 @@ const getContacts = async (limit,skip) => {
 }
 
 
-const addContact = async(name,email,contact) => {
-    const ContactObject = ContactModel({name,email,contact})
+const addContact = async(name,email,phone) => {
+    const ContactObject = ContactModel({name,email,phone})
     try {
         const response = await ContactObject.save();
         return response
