@@ -3,7 +3,7 @@ import { deleteContact, fetchContacts } from '../../../ApiCall/ApiCall';
 import ContactCard from '../ContactCard/ContactCard';
 import Button from '../Button/Button';
 
-const ContactList = () => {
+const ContactList = ({reloadflag}) => {
   const [contacts, setContacts] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -25,7 +25,7 @@ const ContactList = () => {
   useEffect( () => {
 
     fetchData(page,limit);
-  },[page])
+  },[page,reloadflag])
 
 
   const handleDelete = async (id) => {
@@ -54,9 +54,20 @@ const ContactList = () => {
   return (
     <div>
         <ol>
-            {contacts.map(contact => (
-            <ContactCard key={contact._id} contact={contact} handleDelete={() => handleDelete(contact._id)}/>
-            ))}
+            {
+                contacts.length > 0 ? (
+                    contacts.map(contact => (
+                        <ContactCard 
+                            key={contact._id} 
+                            contact={contact} 
+                            handleDelete={() => handleDelete(contact._id)}
+
+                        />
+                    ))
+                ) : (
+                    <p>No Contacts Found</p>
+                )
+            }
         </ol>
 
         <div>

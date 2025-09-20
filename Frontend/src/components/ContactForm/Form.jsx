@@ -4,7 +4,7 @@ import Button from '../Button/Button'
 // import backend from '../../../ApiEndpoint/endpoint'
 import { addContact  } from '../../../ApiCall/ApiCall'
 
-const Form = () => {
+const Form = ({handleAdd}) => {
   const [formData,setFormData] = useState({
     name: '',
     email: '',
@@ -17,7 +17,7 @@ const Form = () => {
     try {
       const response = await addContact(formData);
       console.log(response);
-      
+      handleAdd()
     } catch (error) {
       console.log(error);
       
