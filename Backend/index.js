@@ -27,7 +27,10 @@ server.use('/api/v1/contacts',ContactRoutes)
 // const dbPort = process.env.DB_PORT;
 // const dbHost = process.env.DB_HOST;
 // database connection 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI,{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
 .then(() => {
     console.log("thumbs up DB IS CONNECTED")
 })
