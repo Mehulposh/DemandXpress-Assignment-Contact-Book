@@ -14,9 +14,11 @@ function App() {
     setRefresh((prev) => prev + 1);
   }
   return (
-    <div>
+    <div className='space-y-3 bg-gray-600'>
       <Header/>
+     
       <Form handleAdd={reloadContacts}/>
+      <h3 className='text-xl font-semibold text-blue-500 '>Saved Contacts</h3>
       <ContactList reloadflag={refresh}/>
     </div>
   )
