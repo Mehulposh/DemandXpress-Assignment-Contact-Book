@@ -1,12 +1,117 @@
-# React + Vite
+# Demand Xpress Assigment - Contact Book
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack MERN application to manage and store contacts with pagination, CRUD functionality, and cloud deployment.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Frontend:
+React.js
+Axios
+Tailwind CSS
 
-## Expanding the ESLint configuration
+- Backend:
+Node.js,
+Express.js,
+MongoDB Atlas (via Mongoose)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Deployment:
+
+   - Frontend: Vercel
+
+   - Backend: Render
+
+# ⚙️ Setup Instructions
+
+1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/Mehulposh/DemandXpress-Assignment-Contact-Book
+cd DemandXpress-Assignment-Contact-Book
+```
+
+2️⃣ Backend Setup
+
+```bash
+cd backend
+npm install
+```
+
+Create a .env file inside backend/ and add your MongoDB Atlas connection string:
+
+```bash
+PORT=5000
+MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/ContactBook?retryWrites=true&w=majority
+```
+
+Run the server:
+
+```bash
+npm start
+```
+
+3️⃣ Frontend Setup
+
+```bash
+cd frontend
+npm install
+```
+
+Update the API endpoint in your Axios calls (e.g., src/ApiCall/ApiCall.js):
+
+```bash
+export const backend = {
+  endpoint: "https://<your-backend-url>.onrender.com"
+};
+```
+
+Run the frontend:
+
+```bash
+npm run dev
+```
+
+Deploy frontend on Vercel and backend on Render (or any other platform).
+
+
+# ✨ Features
+
+➕ Add new contacts
+
+📃 View paginated contact list
+
+✏️ Edit existing contact
+
+❌ Delete contact
+
+⏭️ Next / Previous pagination
+
+☁️ Cloud database (MongoDB Atlas)
+
+
+# 🔮 Future Improvements
+
+🔍 Search contacts by name/email
+
+📱 Responsive design improvements
+
+🔑 Authentication (login/logout, JWT)
+
+📤 Import/Export contacts (CSV/Excel)
+
+🖼️ Add profile pictures for contacts
+
+🌐 Multi-language support
+
+
+# 🛠️ Scripts
+
+- Backend
+```bash
+npm start     # Run with nodemon
+```
+
+- Frontend
+
+```bash
+npm run dev     # Run dev server
+```
