@@ -4,7 +4,7 @@ import backend from "../ApiEndpoint/endpoint"
 
 export const fetchContacts = async (page,limit) => {
     try {
-        const response = await axios.get(`${backend.endpoint}?page=${page}?limit=${limit}`);
+        const response = await axios.get(`${backend.endpoint}?page=${page}&limit=${limit}`);
         return response
     } catch (error) {
         console.log(error);
