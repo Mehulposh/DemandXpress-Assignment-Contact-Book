@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Button from './components/Button/Button'
 import Form from './components/ContactForm/Form'
 import ContactList from './components/ContactList/ContactList'
+import Header from './components/Header/Header'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   }
   return (
     <div>
+      <Header/>
       <Form handleAdd={reloadContacts}/>
       <ContactList reloadflag={refresh}/>
     </div>
