@@ -1,5 +1,5 @@
 const backend = {
-    'endpoint': 'http://localhost:8081/api/v1/contacts'
+    'endpoint': 'https://demandxpress-assignment-contact-book.onrender.com'
 }
 
 export default backend;
