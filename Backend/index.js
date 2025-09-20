@@ -10,7 +10,11 @@ const PORT = process.env.PORT;
 const server = express();
 
 //handle cors for different source access
-server.use(cors());
+server.use(cors({
+  origin: ["https://demand-xpress-assignment-contact-bo.vercel.app"], // your frontend domain
+  methods: ["GET", "POST", "DELETE"],
+  credentials: true
+}));
 
 //universal middleware
 server.use(express.json());
