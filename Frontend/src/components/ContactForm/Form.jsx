@@ -36,6 +36,7 @@ const Form = ({handleAdd}) => {
             type='text' 
             placeholder='Write name'
             className='bg-gray-400 p-2 rounded'
+            required
             value={formData.name}
             onChange={(e) => setFormData({...formData,name: e.target.value})}
             />
@@ -46,6 +47,7 @@ const Form = ({handleAdd}) => {
             type='email' 
             placeholder='Write email'
             className='bg-gray-400 p-2 rounded'
+            required
             value={formData.email}
             onChange={(e) => setFormData({...formData,email: e.target.value})}
             />
@@ -56,6 +58,7 @@ const Form = ({handleAdd}) => {
             type='tel' 
             placeholder='Write phone number'
             className='bg-gray-400 p-2 rounded'
+            required
             value={formData.phone}
             onChange={(e) => setFormData({...formData,phone: e.target.value})}
             />
