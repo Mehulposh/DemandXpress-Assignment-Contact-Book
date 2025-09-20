@@ -31,8 +31,7 @@ const ContactList = ({reloadflag}) => {
   const handleDelete = async (id) => {
     try {
         const response = await deleteContact(id);
-        console.log(response);
-        
+        alert(response.data.messsage);
         fetchData(page,limit);
     } catch (error) {
         console.log(error);
