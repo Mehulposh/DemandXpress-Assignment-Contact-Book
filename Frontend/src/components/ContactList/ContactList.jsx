@@ -52,8 +52,10 @@ const ContactList = ({reloadflag}) => {
     }
   }
   return (
-    <div>
-        <ol>
+    <div className='flex flex-col items-center gap-5'>
+        <h3 className='text-2xl font-semibold text-amber-500 '>Saved Contacts</h3>
+
+        <ol className='space-y-3'>
             {
                 contacts.length > 0 ? (
                     contacts.map(contact => (
@@ -71,9 +73,21 @@ const ContactList = ({reloadflag}) => {
         </ol>
 
         <div>
-            <Button onClick={handlePrevious} disabled={page == 1}>Prev</Button>
-            <span>{page}</span>
-            <Button onClick={handleNext} disabled={page === totalPages}>Next</Button>
+            <Button 
+                className='bg-blue-500 py-2 w-fit px-3 text-white rounded' 
+                onClick={handlePrevious} 
+                disabled={page === 1}
+            >
+                Prev
+            </Button>
+            <span className='bg-gray-200 px-3 py-2 m-2 rounded font-semibold'>{`${page} / ${totalPages}`}</span>
+            <Button 
+                className='bg-blue-500 py-2 w-fit px-3 text-white rounded'
+                onClick={handleNext} 
+                disabled={page === totalPages}
+            >
+                Next
+            </Button>
         </div>
     </div>
   )
