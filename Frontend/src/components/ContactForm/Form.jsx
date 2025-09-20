@@ -16,10 +16,13 @@ const Form = ({handleAdd}) => {
 
     try {
       const response = await addContact(formData);
-      console.log(response);
+      if(response.status === 201){
+        alert('Contact Added')
+      }
+      // console.log(response);
       handleAdd()
     } catch (error) {
-      console.log(error);
+      alert(error)
       
     }
 
