@@ -19,11 +19,11 @@ server.use(express.json());
 server.use('/api/v1/contacts',ContactRoutes)
 
 
-const dbName = process.env.DB_NAME;
-const dbPort = process.env.DB_PORT;
-const dbHost = process.env.DB_HOST;
+// const dbName = process.env.DB_NAME;
+// const dbPort = process.env.DB_PORT;
+// const dbHost = process.env.DB_HOST;
 // database connection 
-mongoose.connect(`${dbHost}:${dbPort}/${dbName}`)
+mongoose.connect(process.env.MONGO_URI)
 .then(() => {
     console.log("thumbs up DB IS CONNECTED")
 })
