@@ -26,8 +26,3 @@ function App() {
 export default App
 
 
-/*
-<Button onClick={() => alert('Clicked!')}>
-        Add Contact
-      </Button>
-*/
